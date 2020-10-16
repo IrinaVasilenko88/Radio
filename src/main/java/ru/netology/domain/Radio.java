@@ -30,13 +30,11 @@ public class Radio {
 
     public void changeOnNextRadioStation() {
 
-        if (currentRadioStation < 9) {
-            this.currentRadioStation ++;
-            return;
-        }
         if (currentRadioStation == 9) {
            this.currentRadioStation = 0;
+           return;
         }
+       this.currentRadioStation++;
     }
 
 
