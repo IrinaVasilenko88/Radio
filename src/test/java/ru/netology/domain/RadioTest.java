@@ -25,6 +25,15 @@ class RadioTest {
         int expected = 0;
         assertEquals(expected, radio.getCurrentRadioStation());
     }
+    @Test
+    void shouldChangeOnPreviousRadioStation() {
+        Radio radio = new Radio();
+        int currentRadioStation = 9;
+        radio.setCurrentRadioStation(currentRadioStation);
+        radio.changeOnPreviousRadioStation();
+        int expected = 8;
+        assertEquals(expected, radio.getCurrentRadioStation());
+    }
 
     @Test
     void shouldChangeOnNextRadioStation() {
