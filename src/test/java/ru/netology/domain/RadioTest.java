@@ -7,6 +7,24 @@ import static org.junit.jupiter.api.Assertions.*;
 class RadioTest {
 
     @Test
+    void shouldSetCurrentRadioStationBackToZero () {
+        Radio radio = new Radio();
+        int currentRadioStation = 10;
+        radio.setCurrentRadioStation(currentRadioStation);
+        int expected = 0;
+        assertEquals(expected, radio.getCurrentRadioStation());
+    }
+    @Test
+    void shouldSetCurrentRadioStation () {
+        Radio radio = new Radio();
+        int currentRadioStation = -1;
+        radio.setCurrentRadioStation(currentRadioStation);
+        int expected = 0;
+        assertEquals(expected, radio.getCurrentRadioStation());
+
+    }
+
+    @Test
     void shouldChangeOnPreviousRadioStationIfStationIsMin() {
         Radio radio = new Radio();
         int currentRadioStation = 0;
@@ -25,6 +43,8 @@ class RadioTest {
         int expected = 0;
         assertEquals(expected, radio.getCurrentRadioStation());
     }
+
+
     @Test
     void shouldChangeOnPreviousRadioStation() {
         Radio radio = new Radio();
@@ -34,6 +54,7 @@ class RadioTest {
         int expected = 8;
         assertEquals(expected, radio.getCurrentRadioStation());
     }
+
 
     @Test
     void shouldChangeOnNextRadioStation() {
@@ -107,4 +128,14 @@ class RadioTest {
 
     }
 
+    @Test
+    void changeOnNextRadioStation() {
+        Radio radio = new Radio();
+        int currentRadioStation = 8;
+        radio.setCurrentRadioStation(currentRadioStation);
+        radio.changeOnNextRadioStation();
+        int expected = 9;
+        assertEquals (expected, radio.getCurrentRadioStation());
+
+    }
 }
