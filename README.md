@@ -47,3 +47,12 @@
 
 **Branch lombok**
 - Внедрение Java-библиотеки Lombok в data-class'ы
+
+**Для запуска проекта:**
+1. Склонировать проект из репозитория командой 
+
+```
+git clone https://github.com/IrinaVasilenko88/Radio.git
+``` 
+2. Открыть склонированный проект в Intellij IDEA
+3. Запустить команду ```mvn test```
